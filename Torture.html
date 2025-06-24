@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Brooklyn Guy's Torture</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <audio id="bg-music" autoplay loop>
+    <source src="second-track.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <a href="Prison.html">
+    <img src="BrooklynGuysMentalTorture.gif" alt="Back to Home" class="center-image">
+  </a>
+
+<a href="Reliquary.html" class="corner-link">
+  <img src="ChefPeePee'sSeveredHead.png" alt="Next" class="corner-image shaking" />
+</a>
+
+<a href="Graveyard.html" class="left-corner-link">
+  <img src="JeffyCorpse.png" alt="Go to Page 4" class="left-corner-image shaking" />
+</a>
+
+  <script>
+    window.addEventListener('load', () => {
+      const music = document.getElementById('bg-music');
+
+      const playAudio = () => {
+        const playPromise = music.play();
+        if (playPromise !== undefined) {
+          playPromise
+            .then(() => {
+              console.log("Music started");
+            })
+            .catch((error) => {
+              console.warn("Autoplay blocked. Waiting for user interaction...");
+              document.body.addEventListener('click', () => {
+                music.play();
+              }, { once: true });
+            });
+        }
+      };
+
+      playAudio();
+    });
+  </script>
+
+</body>
+</html>
+

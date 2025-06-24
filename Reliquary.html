@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Chef Pee Pee's Reliquary</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+   <div class="background-image"></div>
+
+  <body class="third-page">
+
+  <div class="image-row">
+    <a href="https://www.youtube.com/watch?v=F-wVWUxVYEM" >
+      <img src="PleaseAnswerMe.jpg" alt="Image 1" class="grid-image" data-audio="deargod.mp3" />
+    </a>
+    <a href="https://www.youtube.com/watch?v=K8-cOUbEhTY" >
+      <img src="ChefOctopus.png" alt="Image 2" class="grid-image" data-audio="deargod.mp3" />
+    </a>
+    <a href="https://www.youtube.com/watch?v=cWOYVhyJAQY" >
+      <img src="RoboChef.png" alt="Image 3" class="grid-image" data-audio="deargod.mp3" />
+    </a>
+    <a href="https://www.youtube.com/watch?v=oTvNVA_EPN4" >
+      <img src="ChefPeePeeListens.jpg" alt="Image 4" class="grid-image" data-audio="deargod.mp3" />
+    </a>
+  </div>
+
+<script>
+  const images = document.querySelectorAll('.grid-image');
+
+  images.forEach(image => {
+    image.addEventListener('mouseenter', () => {
+      const audio = new Audio(image.dataset.audio);
+      audio.play().catch(() => {});
+    });
+  });
+</script>
+
+
+</body>
+</html>
+
+<a href="Torture.html" class="corner-link">
+  <img src="BrooklynsHead.png" alt="Next" class="corner-image shaking" />
+</a>
+
+<a href="Library.html" class="bottom-left-link">
+  <img src="kino.png" alt="Go to Page 5" class="shaking-logo" />
+</a>
+
+
+
+    <audio id="bg-music" autoplay loop>
+    <source src="ChefPeePee'sLament.wav" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+<script>
+    window.addEventListener('load', () => {
+      const music = document.getElementById('bg-music');
+
+      const playAudio = () => {
+        const playPromise = music.play();
+        if (playPromise !== undefined) {
+          playPromise
+            .then(() => {
+              console.log("Music started");
+            })
+            .catch((error) => {
+              console.warn("Autoplay blocked. Waiting for user interaction...");
+              document.body.addEventListener('click', () => {
+                music.play();
+              }, { once: true });
+            });
+        }
+      };
+
+      playAudio();
+    });
+  </script>
+
+</body>
+</html>

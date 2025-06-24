@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>The Graveyard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="page-four">
+
+  <div class="top-right-image">
+    <img src="God.png" alt="God Himself" />
+  </div>
+
+</body>
+</html>
+
+<a href="Torture.html" class="corner-link">
+  <img src="BrooklynsHead.png" alt="Next" class="corner-image shaking" />
+</a>
+
+<div class="left-column">
+    <div class="image-with-text">
+      <img src="Marvin.png" alt="Left 1" class="side-image" />
+      <p>Marvin - He always made me do EVERYTHING. This stupid bilgerat never once learned how to fend for himself. Figures..</p>
+    </div>
+    <div class="image-with-text">
+      <img src="Rose.png" alt="Left 2" class="side-image" />
+      <p>Rose - She jumped with Glee! But now she feels Agony.</p>
+    </div>
+    <div class="image-with-text">
+      <img src="Junior.png" alt="Left 3" class="side-image" />
+      <p>Junior - Brat. Brat. Stupid Brat. He has the face of god. He has the face of god. He has the face of god. He has the face of god.</p>
+    </div>
+  </div>
+
+</body>
+</html>
+
+<div class="centered-video">
+  <video width="320" height="180" controls>
+    <source src="JeffySpankDisplay.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
+
+<audio id="bg-music" autoplay loop>
+    <source src="BrooklynGravesite.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <script>
+    window.addEventListener('load', () => {
+      const music = document.getElementById('bg-music');
+
+      const playAudio = () => {
+        const playPromise = music.play();
+        if (playPromise !== undefined) {
+          playPromise
+            .then(() => {
+              console.log("Music started");
+            })
+            .catch((error) => {
+              console.warn("Autoplay blocked. Waiting for user interaction...");
+              document.body.addEventListener('click', () => {
+                music.play();
+              }, { once: true });
+            });
+        }
+      };
+
+      playAudio();
+    });
+  </script>
+
+</body>
+</html>
