@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Brooklyn Guy's Prison</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <audio id="bg-music" autoplay loop>
+    <source src="background.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <div class="content-wrapper">
+    <h1 class="page-title">Brooklyn Guy Has Been Bad, He Faces Punishment...</h1>
+  <a href="Torture.html">
+    <img src="BrooklynGuy.png" alt="Welcome" class="center-image">
+  </a>
+
+<script>
+    window.addEventListener('load', () => {
+      const music = document.getElementById('bg-music');
+
+      const playAudio = () => {
+        const playPromise = music.play();
+        if (playPromise !== undefined) {
+          playPromise
+            .then(() => {
+              console.log("Music started");
+            })
+            .catch((error) => {
+              console.warn("Autoplay blocked. Waiting for user interaction...");
+              document.body.addEventListener('click', () => {
+                music.play();
+              }, { once: true });
+            });
+        }
+      };
+
+      playAudio();
+    });
+  </script>
+
+</body>
+</html>
