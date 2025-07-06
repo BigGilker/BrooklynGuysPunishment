@@ -174,11 +174,11 @@ body {
 }
 
 .centered-video {
-  position: fixed;
-  top: 50%;
-  left: 60%;
-  transform: translate(-50%, -50%);
-  z-index: 10;
+  position: absolute;
+  right: 15%;
+  top: 70%;
+  transform: translateY(-50%);
+  z-index: 20;
 }
 
 .bottom-left-link {
