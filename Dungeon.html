@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dungeon</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="brookie.png" type="image/png" />
+</head>
+<body class="page-eight">
+
+<video id="myVideo" class="centered-video" loop playsinline>
+  <source src="Pain.mp4" type="video/mp4" />
+</video>
+
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+    const video = document.getElementById("myVideo");
+
+    if (!video) {
+      console.error("Could not find the video element.");
+      return;
+    }
+
+    video.play().catch(() => {
+      const startWithSound = () => {
+        video.muted = false;
+        video.play().catch(err => console.error("Play failed:", err));
+        document.removeEventListener("click", startWithSound);
+      };
+      document.addEventListener("click", startWithSound);
+    });
+  });
+</script>
+</body>
+
