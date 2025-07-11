@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Junior</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="Brookie.png" type="image/png" />
+</head>
+<body class="page-ten">
+
+ <div class="heartbeat-container">
+    <img src="JuniorsHeart.png" alt="Beating Heart" id="heart" />
+    <audio id="heartbeat-sound" src="JuniorsHeartbeat.mp3"></audio>
+  </div>
+
+<script>
+const heart = document.getElementById("heart");
+const sound = document.getElementById("heartbeat-sound");
+
+function playBeat() {
+  sound.currentTime = 0;
+  sound.play();
+
+  heart.classList.add("beat");
+  setTimeout(() => {
+    heart.classList.remove("beat");
+  }, 300);
+}
+
+playBeat();
+setInterval(() => {
+  playBeat();
+}, 1733); 
+
+    window.addEventListener("load", () => {
+      sound.play().then(() => {
+        startBeating();
+      }).catch(() => {
+        document.body.addEventListener("click", () => {
+          startBeating();
+        }, { once: true });
+      });
+    });
+</script>
+
+</body>
+</html>

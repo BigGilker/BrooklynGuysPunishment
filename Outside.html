@@ -2,45 +2,29 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Hell</title>
+  <title>Wastelands</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="Brookie.png" type="image/png" />
 </head>
-<body class="page-six">
+<body class="page-nine">
 
-<a href="MarvinsMind.html" class="glitch-link" id="glitch-image-link">
-  <img src="MarvinCorpse.png" alt="Go to Page 7" class="glitch-image" />
-</a>    
+<div class="background-container"></div>
 
-<a href="Dungeon.html" class="static-link">
-  <img src="Keeper.png" alt="Go to Page 8" class="static-image" />
-</a>
+  <script src="panning.js"></script>
 
-<audio id="bg-music" autoplay loop>
-  <source src="TheCouch.mp3" type="audio/mpeg" />
+ <audio id="bg-music" autoplay loop>
+  <source src="Wastelands.mp3" type="audio/mpeg" />
   Your browser does not support the audio element.
 </audio>
 
-<a href="Outside.html" class="invisible-link"></a>
+<a href="index.html" class="invisible-link-home"></a>
+<a href="Graveyard.html" class="invisible-link-graveyard"></a>
 
-<a href="Outside.html" class="invisible-link" onclick="playSound()"></a>
 
-<audio id="click-sound" src="Escape.mp3"></audio>
-
-<a href="#" class="invisible-link" onclick="playAndGo(event)"></a>
-
-<script>
-  function playAndGo(event) {
-    event.preventDefault();
-    const sound = document.getElementById('click-sound');
-    sound.currentTime = 0;
-    sound.play();
-    setTimeout(() => {
-      window.location.href = "Outside.html";
-    }, 2565)
-  }
-</script>
+<a href="Junior.html" class="junior-link">
+  <img src="TheFaceofGod.png" alt="Next Page" class="next-page-image">
+</a>
 
 <script>
   window.addEventListener('load', function () {
@@ -62,3 +46,6 @@
     document.body.style.backgroundPosition = `${50 + xPercent}% ${50 + yPercent}%`;
   });
 </script>
+
+</body>
+</html>
